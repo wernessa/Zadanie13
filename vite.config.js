@@ -19,6 +19,7 @@ export default defineConfig({
   envDir: __dirname,
   build: {
     emptyOutDir: true,
+    target: 'esnext',
     rollupOptions: {
       input: inputs,
     },
