@@ -16,6 +16,6 @@ loginForm.addEventListener('submit', async (event) => {
   if (error) {
     alert('Nieprawidłowy email lub hasło.');
   } else {
-    window.location.href = '/';
+    window.location.href = '/Zadanie13/';
   }
 });
