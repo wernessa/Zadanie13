@@ -14,6 +14,7 @@ for await (const entry of glob('src/**/*.html')) {
 }
 
 export default defineConfig({
+  base: '/Zadanie13/',
   plugins: [tailwindcss()],
   root: resolve(__dirname, 'src'),
   envDir: __dirname,
