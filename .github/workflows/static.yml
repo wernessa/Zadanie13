@@ -41,7 +41,7 @@ jobs:
 
       - run: npm install
 
-      - run: npm run build -- --base=/zadanie13/
+      - run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
