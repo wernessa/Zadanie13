@@ -1,15 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Gazeta</title>
   </head>
-  <body>
-    <div id="app">
-      <a href="/">Home</a>
-    </div>
-    <script type="module" src="/login/main.js"></script>
+  <body class="bg-gray-50 min-h-screen flex justify-center items-center">
+    <main class="w-full max-w-sm bg-white rounded shadow p-6 flex flex-col gap-4">
+      <h1 class="text-2xl font-bold text-center mb-2">Logowanie</h1>
+
+      <form class="flex flex-col gap-4" id="LoginForm">
+        <input
+          class="border rounded px-3 py-2 focus:outline-none focus:ring"
+          name="email"
+          placeholder="Email"
+          required
+          type="email"
+        />
+        <input
+          class="border rounded px-3 py-2 focus:outline-none focus:ring"
+          name="password"
+          placeholder="Hasło"
+          required
+          type="password"
+        />
+
+        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition" type="submit">
+          Zaloguj się
+        </button>
+      </form>
+
+      <a class="text-blue-600 hover:underline transition text-center" href="/">Powrót do strony głównej</a>
+    </main>
+
+    <script src="/login/main.js" type="module"></script>
   </body>
 </html>

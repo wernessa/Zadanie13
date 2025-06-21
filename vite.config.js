@@ -1,9 +1,10 @@
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vite'
-import { glob } from 'node:fs/promises'
+import tailwindcss from '@tailwindcss/vite';
+import { glob } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const inputs = [];
 
@@ -13,9 +14,9 @@ for await (const entry of glob('src/**/*.html')) {
 }
 
 export default defineConfig({
-  plugins: [],
-
+  plugins: [tailwindcss()],
   root: resolve(__dirname, 'src'),
+  envDir: __dirname,
   build: {
     emptyOutDir: true,
     rollupOptions: {
@@ -23,4 +24,4 @@ export default defineConfig({
     },
     outDir: resolve(__dirname, 'dist'),
   },
-})
+});

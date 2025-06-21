@@ -1,15 +1,40 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Gazeta</title>
   </head>
-  <body>
-    <div id="app">
-      <a href="/login/">Login</a>
-    </div>
-    <script type="module" src="/main.js"></script>
+  <body class="bg-gray-50 min-h-screen">
+    <header class="bg-white p-4 shadow flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">Artykuły</h1>
+
+      <nav>
+        <a class="text-blue-600 hover:underline" href="/login/">Zaloguj</a>
+        <button class="ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 hidden" id="LogoutButton">
+          Wyloguj
+        </button>
+      </nav>
+    </header>
+
+    <main class="mx-auto p-4 max-w-3xl">
+      <div class="flex justify-end mb-4">
+        <button
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600  hidden" id="AddArticleButton"
+        >
+          Dodaj artykuł
+        </button>
+      </div>
+
+      <section class="space-y-6" id="ArticleList"></section>
+    </main>
+
+    <!-- todo: use native dialog -->
+    <div id="ModalContainer"></div>
+
+    <script src="/main.js" type="module"></script>
   </body>
 </html>
